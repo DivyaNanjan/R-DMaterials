@@ -1,0 +1,35 @@
+client side scripting...
+
+var sayings= "Sandeep said "Everything is poosble""
+this above thing wont work we need to giv escape character.
+var sayings= "Sandeep said \"Everything is poosble\""
+**** After \ next character will be part of string
+
+document.write(varname)
+documet is a object write is a fucntions
+can use html element inside document.write("<h1> Hi how r u </h1>")
+
+--------------
+Events
+onclick
+onmouseover()
+alert()
+----------
+js is Oject oriented prog lang
+1.object knows something variables adn does something fucntyiosn
+
+<p id="para" onclick="change">Click me </p>
+
+<script> 
+function change()
+{
+     document.getElemenetById('para').innerHTML("Click me changed to U clikced me !!")
+	 document.getElemenetById('para').src("pic.jpeg")  Changes Click me to pic.jpeg
+	 document.getElemenetById('para').checked  --- for radio buttons
+	 
+ } 
+ 
+ ------- timers
+ 
+ setTimeOut(Time in milli seconds) runs only for one time
+ setInterval(change(),2000)

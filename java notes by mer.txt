@@ -1,0 +1,253 @@
+Objects(instance) are created in heap memory
+A obj = new A()  [new A() will create obj in heap memory]
+
+Cant use non static variables inside static method
+
+Runtime polymorphism,
+
+Dynamic Method Dispatch Deciding which method shud call in runtime
+A obj= new A()
+B obj1 = new B()
+
+A a;
+a=obj1
+a.show() show B will be printed
+a=obj
+a.show   show A will be printed
+
+Parent child
+base derived
+Super sub+
+________________________________________________________________
+
+Final key word can be used for variable method class
+
+Cant override a method if v use Final
+Cant extend a class if v use Final before class
+final int i=6; i++ is not possibel
+Only one time assignment is possible
+
+___________________________________
+
+This KeyWord
+it is a current instance. If we have 5 objects at one point we r working with one obj. and this is will be that current instance
+
+_________________________________________
+Abstract methods are only declared but not defined
+cant create an object for abstract cls
+abstract cls can have abstract methods 
+__________________________________________
+
+abstract class MaheshPhone
+{
+  public void call()
+   {
+     sysout("for calling feature");
+   }
+   public  abstract void move(); //but he donno how to implement move ,dqance so as we dopnno implementation we can make it abstract
+   public abstract void dance();//as they are abstract methos class shud be abstract
+   public abstract void cook(); // canot instantiate the abstract class means cant create obj for abstract class
+
+}
+
+
+abstract class RameshPhone extends MaheshPhone(define all abstract methods)
+
+{
+    public void move()
+	sysout("Moving ")// some how he implemented but failed to dance andd cook
+      
+	  public abstract void dance()
+     public abstract void cook()
+
+
+
+}
+
+
+class SureshPhone extends RameshPhone  //concrete class 
+{
+  public dance()
+  sysout
+  public cook ()
+  sysout() 
+  So we can able to create object for SureshPhone
+  _________________________
+}
+
+
+___________________________________
+
+abstract     interface(provide multiple interface every method is abstract by default no need to mention explictly)
+
+class               interface(not a class)
+declare method       declare
+define is possible    not possible
+cant create object    same
+extends 				implements 
+interface supports multiple inheritence
+
+*** Marke Interface -- without any methods
+****Single Abstract Method SAM -- only one methd (Functional Interface)
+***** Normal 
+_________________________________________
+class A extends B implements C
+
+B and C have method called show
+Now B class has more power than interface C.
+So o/p of B show methos will be executed
+___________________________________
+
+In java if we print object 
+it will call to string methiod.
+If in our class toString method is not there it will call the Object class toStringMethod
+________________________________________________________
+
+EXCEPIONS
+top class is throwable ()
+subclasses are Exception(can be handled by us)  Checked and Unchecked
+				Error(cant be handlwed) RAM out of memory,JVM not working properly
+
+				
+Throwable class is used handle all exceptions and error
+extended by two main classes exceptions and errors
+exceptions --- v can handle 
+errors     ---- v cant handle memory leaking in JVM CPU not working 				
+
+exceptions  -- checked a. IO(inputs from user)   b. SQL   net beans itself knows
+			-- unchecked  Runtime exceptions(Array index out of bund , file not found )
+			
+critical statements will be under """try""" block
+multiple catches with one try block
+keep last catch as exception
+
+****Finally block : even if the error comes i want to print some thing then write that code in final block
+					need to close our resources at finally block
+					
+** SUPRESSING THE ERRORS  by using """throws""" keyword(it wont handle the error just supressing the error)
+
+
+shallow copying obj1 = obj
+deep copying    obj1. i  = obj.i    obj1. j = obj . j  copy each and evry variables
+cloning obj1 = obj.clone()      clone (){ return super.clone}
+
+
+------------------------------------------------------
+
+Collections and Generics
+
+Collection -- interface  
+Collection values  = new ArrayList()  ArrayList is a class whcih implemts List(a interfae) which implements Collections
+
+Collection<Integer> = new ArrayList<Integer>()
+
+List implements Collection
+List works with index number,have duplicates , 
+
+Set<Integer> numbers = HashSet<Integer>()  Set is a interface HashSet is a class which implements Set, 
+Set           number = TreeSet<Integer>() Sorted Format
+Map<key,value>
+
+
+Two ways to fetch values  a.Iterator  b.Enhanced Forloop
+Collection values = new ArrayList()
+Iterator i = values.iterator()
+while(i.hasNext())
+{
+ i.next()
+}
+
+In Collections we cant add values at required postion values.add(1,33)  cant add 33 at 1st place
+So List Came
+
+Collections.sort()
+
+Vectors increases the capatcity dependng on the user input  v.capacity() 
+Vector<Integer> v = new Vector<Integer>()   //Thread safe increases capactiy by 100% //slow
+ArrayList                                   //Thread not safe increases cap   by 50% // fast
+
+Linked list follows double linked List concnept has previous node and and next node only 2 nodes are effected 
+Array lsit   follows  dynamic Array  When we add an elements entire numbers are effected (for fastng fetch)
+
+Set wont allow duplicates   Set values = new HashSet<>()   using some hashin algorithm wont save in proper sequence
+											 TreeSet
+							Set<String> keys = values.keySet()  get all the keys				 
+Inner class
+Member inner class --> class A{ 
+								classB {} }  now A obj = new A()   A.B obj1 = obj.new B();    so after compilation we will get A.class A$B class as byte code 
+Static inner class  ---> class A { 
+								static class B{ } now A.B obj1 = new A.B()  no need to create object for A since B is static 
+
+Annonymous inner class --> class A { public show display() sysout("printing "}
+							main ()
+							{
+							 A obj = new A(){
+									 public void display()
+									 sysout("Displaying printing")
+									
+									}
+							 obj.display() will do the recent one
+							}
+							
+cookies -- temporary local storage
+
+
+
+JSP          SERVLET
+<html>
+<body>
+
+</body>
+<%  is called scriptlet which goes under service method in servlet %>   scriplet
+<%!  this is called declaration comes above service method   %>    declaration
+<%@ page import ="java.utili.Data" %>  directive
+<% =    goes to out.println in servlet %>   expression
+</html>
+
+Client req --> Controller --> Service class --> DAO (interacts with DB) --> DB  -->  Controller gives the view as JSP by giving some data (POJO object as model)
+
+File iputStream fis
+DatainputStrem  dis
+dis.readUTF()
+
+_________________________
+JDBC - java data base connectivity
+1. importing of packages            java.sql.*
+2.Load and register(class.forName("com.mysql.jdbc.driver") the drivers      driver for mysql is com.mysql.jdbc.driver (jar file mysql-connector)
+3.Establsihing connection      instantiate the interface called Connection
+4.Create statment              st(Predefined queries , prepartd statemnt(for dynamic Queries , callable(Stored procedures)
+5.Execute Query                st.executeQuery(select * from employee)       
+6.Proces Result 				
+7.Close the connection   
+
+_________________________
+Hibernate
+ORM object relational mapping tool object relation to persisting (saving of data)
+Object world --> Relation world(Rows and colums)
+1. class is table
+2. object is rows
+Few ORM tools ibatics,JPA
+saving of a object can be done with sessionobject  (can get from SessionFactory)0
+
+-----------------
+normal mvc
+req -- controller -- data from db in form of model -- showed ad view
+
+spring mvc
+big apps multiple controller --> for different tasks
+to handle those many there will be front controller( Dispatcher Servlet)
+soon after we hit a req goes to web.xml 
+
+________________________________________________________
+We can get the Beans
+from Beanfactory(small app) and ApplicationContext (super set of beanfactory)
+Can deifne beans either in XML bsed configuration or Annotation based Configuration
+@Autowire    search for object itself
+@Qualifier("1st Object") search for name
+@Component  for specifying class object
+@Configuration   for configuration
+@Component-Scan   scans all components
+___________________________________________________________________
+
+Spring MVC
+1.

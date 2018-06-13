@@ -1,0 +1,55 @@
+JAVA
+Serilaisation
+
+When we are playing the game and wanna quit we will save the game.(there we will save the state of object. not whole object will store the values)
+will be saving data in file(not data save the state of object)
+instead of dataouputstream   ObjectOutputStream
+
+The String class and all the wrapper classes implements java.io.Serializable interface by default. 
+
+*****Serialization in java is a mechanism of writing the state of an object into a byte stream.
+
+***** Saving the state of an object in a file is known as serialization. 
+Rather than serializing Java objects to binary format we can serialize them to XML documents which is human readable
+
+_________________________________________________________
+
+servlet is actually a java class resides on tomcat instance
+tomncat acts as a container
+*******Tomcat is repsonsible tocreate servlet object and req and resp objects
+Every hit tomcat creates a new req and resp object
+Servlet obj are reused(different req have differenct threads not instances) will be useful for less resources
+
+********* HTTP is stateless protocol. It wont store our data then whoi will save the data ?? Session objects :)
+
+ApplicationContext : access the application
+Sevlet path        : servlet mapping
+localhost:8080/ApplicationContext/servlet path
+localhost:8080 tomcat instance running 
+
+****************** Session obj will be created per user/machine(only one browser)
+**** Context Object is more than session where the obj is shared acros all servlet and users ie thru out the application
+
+
+*******JSP******
+java inside HTML  write as <% %>    expression <%=k >   declaration <%! %>   <%@ for import %> @ directive
+1. jsp for printing out.println  (for printing varibale )   <%=varibalename %>
+	but in servelts we need to create object for printwriter and obj.println
+
+2. Every JSP is a servlet created by tomacat . Tomcat converts JSP to servlet
+3. every scriptlet code added to doGet method of servlet
+4. what ever we keep in declaration will be outside doGet
+5 . static codes html  are written into out.write 
+6.  another directive <%@ include file = "test.jsp" %>
+7 we have implicit objects request session application(ServletContext in servlet)
+
+
+***************
+response.sendRedirect()  soon after we submit from login.jsp browser a hit to Servelt(1st call) and the n Servelt and then browser will redirect to succ3ess.jsp  
+						So we cant save the data in request object two URLs . So save the data in session
+
+response.requestDispatcher()  Browser donno it is a new request.	 Server itself will pass request o success.jsp. Only one call   responsedispatch rd = request.getRequestDispatcher()  rd.forward("request","response")  
+							  We can save the data in request obj itself
+						
+
+

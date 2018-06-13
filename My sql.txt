@@ -1,0 +1,43 @@
+SELECT {Employee}.[Id] ,{Employee}.[Name], {Employee}.[Function],{Employee}.[PhoneNumber]
+From {Employee}
+
+SELECT * FROM {Employee}
+SELECT * FROM {Company}
+DELETE FROM {Employee}
+
+SELECT {Employee}.[Id] ,{Employee}.[Name], {Employee}.[Function],{Employee}.[PhoneNumber]
+From {Employee}
+Where  {Employee}.[Name] like '%Sandeep'
+
+
+insert into {Employee} ({Employee}.[Name],{Employee}.[Function],{Employee}.[PhoneNumber])
+values ('Vasanth', 'Server', '678678')
+
+update {Employee}
+set {Employee}.[Name]='test'
+where {Employee}.[Id] =17
+
+insert into {Company} ({Company}.[CompanyName],{Company}.[Location],{Company}.[EmployeeId])
+values ('Vasanth', 'Server', '678678')
+
+insert into {Company} ({Company}.[CompanyName],{Company}.[Location],{Company}.[EmployeeId])
+values ('Wipro', 'VIZAG', '29')
+
+select {Employee}.[Name] , {Company}.[CompanyName], '',''
+from {Employee},{Company}
+where {Employee}.[Id] = {Company}.[EmployeeId]
+
+select {Employee}.[Name] , {Company}.[CompanyName], '','','','','','',''
+from {Employee}
+Full Outer join {Company}
+ON {Company}.[EmployeeId]={Employee}.[Id]
+
+select {Products}.* ,''
+from {Products}
+
+SELECT {Answer}.*,'','','','','' from {Answer}
+
+select {Employee}.[Name] | {Company}.[CompanyName] | '|,''|''|''|''|''|''
+from {Employee}
+Full Outer join {Company}
+ON {Company}.[EmployeeId]={Employee}.[Id]

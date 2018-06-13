@@ -1,0 +1,46 @@
+javascript library 
+aloows us manipulate html anamintions easily
+
+select the elements by $(this)
+<p onlick = "$(this).hide();">
+<p id="para">Click me </p>
+
+in a external js file  
+$('#para').click(function() {
+   
+     $('#para').hide();
+})
+$ will be used to select
+#para is a selector
+click is a event handler
+
+-----------
+$(document).ready(function()
+{
+   $('#para').fadeIn(1000millisec)
+   
+})
+
+$('#img').load(function{
+  alert('Img is loaded')
+})
+ready is when u run the app
+load after loading all the images 
+
+var count = $('*').length
+
+select by type
+$(':text').focusin(function(){
+    $(this).css('background','blue')
+   })
+   
+   $(':text').blur(function(){
+    $(this).css('background','white')
+   })
+   
+   ----------
+   contains
+   $("p:contains('Watt')").css('background','yellow')
+   
+   ----
+   $().keyup(function(){})

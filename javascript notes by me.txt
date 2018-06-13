@@ -1,0 +1,54 @@
+document.writeln("Hi Sandeep")
+
+<body>
+ <script language = "javascript" type="text/javascript"/>
+ alert();
+ var user = prompt("Enter the name","name.....");
+ user is String
+ if we want to convert to Intergert
+ parseInt(prompt("Enter the marks"))
+ alert(name);
+confirm();
+</body>
+
+1. dialogue boxes alert, prompt,confirm
+2. condition if , else if(space in between else and if) ,else
+3. do{}while)()
+4.str.charAt(2), str.charCodeAt(2) Ascii of that 
+5  str1.concat(str2)
+  str.indexOf("P") first occurance
+  str.toLowerCase()
+  str.split(" ",3) 3 is length of string
+  
+  var trainning = {"trainer":"Sandeep", "mode":"online"}
+  var txt = ""
+  var x;
+  for (x in trainning)
+   txt= trainning[x] + ","
+   
+   document.write(txt)
+   
+   ______________________________
+   Dates
+   var dt = new Date("Decemebr 15, 2016 16:20:05")
+   document.write("current date from system",Date())
+   document.write(dt) 
+   dt.getDate();
+   dt.getMonth() 0 is January
+   dt.getDay() 0 is sunday
+   dt.getFullYear()
+   
+   
+   _______________________________
+   
+   form 
+   input type = text name = "name" 
+   ______________________________
+   Events
+   onmouseover
+   onmouseout
+   
+   ______________________________
+   window.location= "https:tutorialspoint.com"  page will be redirected
+   body onload = "setTimeOut('Redirect()',5000)"
+   

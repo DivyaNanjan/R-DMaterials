@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+   <head> brains behing the website titles 
+     <meta charset="utf-8"/> to include all keys other than our keyboard
+	 <!-- comments -->
+	 h1 - h6 headers
+	 <strong> -- bold
+	 <em> </em>   -- italcize
+	 <hr> -- horizantal rule tag for  _________________________________________
+	 
+	 unorderd list <ul list-style-type:circle>  bullet points   for order list points will come
+	                   <li>   </li>
+					</ul>
+					
+	 <a href = "test.html"> anchor tag   href is extra attribute
+	 <img src="name.png" alt="Ghost image" />   if name.png is not present alt name(Ghost image is displayed
+	 <img src="../images/name.jpg" width="900"  height= "500" /> pixels
+____________________________________________________________________________________________________________________
+
+Audio tag
+<audio controls autoplay loop>  autoplay soon after page loads   loop -- restart the song again controls-- for play pause 
+ <source  src="audio.mp3" type="audio/mpeg"> 
+</audio>
+	 
+Video tag
+
+<video audio width = '640" height ="360" controls autoplay loop>
+ <source src="video.mp4" type="video/mp4"/>
+
+</video> 
+
+
+_________________________________________
+
+CSS 
+inline styling <p style="color:blue"> Im blue </p> 
+internal style sheets <style type="text/css">  p{color:blue; background-color:yellow;} 
+external style sheets  <link rel ="stylesheet" href="main.css">
+
+---font-props---
+font-family:Arial;
+font-weight:bold(100-900);
+font-style:italic
+font-size:18px;
+simply    font:bold italic 14px Arial
+
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;  more space on the left
+simply       padding:10px 80px 0px 30px   top righ bottom left
+			 padding:10px 40px  (topandbottom 10px   left and right 40px)
+
+border:1px dashed red(widthofborder sytle color)
+border-top:4px solid green
+border-bottom: 4px solid orange
+
+margin: 50px 
+background-image:url{"name.png"}
+background-repeat:repeat-x  repeat-y(y axis) no-repeat 
+background-position:center  center-top
+
+
+_________________________________________
+Psuedo classes
+p:firstletter{
+  color:blue;
+ }
+p:firstline{
+color:blue;
+}
+#div1 p:first-child  :last-child
+#div p:before{ content:"write something"}  before paragrap wirte something will be appended
+#div1 p:nth-child(even){}
+#div1 p:nth-child(4n){} in the list of paragraph evry 4th paragh wll change
+
+_________________________________________
+styling
+
+ a:hover{} 
+ a:active{color:red;} holding and clicking
+ a:visited{color:white}  
+
+_________________________________________list-style-type:circle/square  list-style-image:"name.png"
+
+border-radius:50px; border-radius: 50px 0px 50px 0px;﻿
+border-top-right-radius:50px
+
+_________________________________________
+Linear gradient
+background-image:linear-gradient(to top,darkblue,mediumblue,blue)
+
+_________________________________________
+img 
+float:left    beside our pic matter will come
+clear : both  paragh will be cleared
+
+3 columns (create 3 boxes for each boxes float:left
+____________________________________________________________________________________________________________________
+<body>
+   <header>  </header>
+   <nav>
+   <section> <artcile>  header  footer
+     <aside>  
+	 <footer>
+<body>
+
+_-----------------
+table border=1px
+<thead columspan=number of coloums>
+<tbody>
+<tfoot>
+forms  
+<input type=text name=firstname id=first_name
+with name it will send to server
+with id broswer related things will be happening
+<fieldset>
+<legend>  similar to header it wont be bold
+
+
+<form action="" method=""	>
+<div class="form-group">
+<label for="first_name">first name:</label> if we click that label cursor will point to that label
+<input type="text" name="firstname" id="first_name" class="form-control"> </input>
+</div>

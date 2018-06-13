@@ -1,0 +1,100 @@
+for responsive desgins
+add the links for bootstrap
+<script file> add jquery from google api
+<script> java script from google api'script
+	
+
+class="btn btn-success" green color button will come
+onclick = "$(this).hide()"  jquery file
+
+__________________
+BOOTSTRAP GRID
+totally width will be 12colums
+class: bg-warning  bg-success bg-info bg-primary  bg-danger  backgound colors
+
+
+xs (for phones - screens less than 768px wide)
+sm (for tablets - screens equal to or greater than 768px wide)
+md (for small laptops - screens equal to or greater than 992px wide)
+lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+class="row"
+class="container"
+class="col-lg-1 col xs 4"   column in large screen break by 1column  so total 12col/1  12 colums we can see
+                             coulmn in xtra small break by 4colums  so total  12/4     3 colums we can see in a row
+swapping colum1 and coulmn2
+class = "col-md-push-4"   so any device less than medium column1 normal ga column1 will print first   for big devices column2 will print
+<p>Column1
+
+class ="col-md-pull-4"  
+<p> coumn2
+
+_____________________
+Typography
+<h1>This is header <small>this is secondary</small> </h1>
+<p class="lead">This si a leading </p>  lead is a build in paragraph
+<mark> yellow color just like marker
+<del> text </del>  <s> striketext </s>
+class="text-left"  class="text-justify"
+
+<blockquote class="blockquote-reverse">
+<p>great saying </p>
+<footer>By Sandeep </footer>
+</blockquote>
+------------------
+tables
+class="table table-striped table-bordered  ***table-hover** table-condensed"  table-striped: eevry alternate row is colored
+<tr class="active" class="s> similar to hover will be highlighted
+</tr>
+
+----------------
+images by defualt are not responseive
+<div class="col-md-4 col-xs-6">
+<img src="name.pic" class="img-responsive/> class needed to be given for responsive
+class="img-rounded" img-circle img-thumbnail
+__________________
+class="btn btn-warning btn-lg" 
+
+---------
+<form class="form-inline"> 
+<div class="form-control">
+
+Horizantal forms
+<label for="" class="col-sm-2 control-label">
+
+-----------
+List group
+<ul class="list-group">
+ <li class="list-group-item">
+ 
+ ------------
+ jumbotron
+ <div class="jumbotron"
+ ---------
+ drop down
+ <div class="dropdown" >
+  <button class="btn btn-default dropdown-toggle" type="button">
+   DropdownList
+  <span class="caret">   dropdownlist there will be small arrow
+  <ul class="dropdown-menu" arialabelledby="dropdownmenu">
+      <li><a href="#">some text</a></li>
+      <li><a href="#">some more text</a></li>
+      <li><a href="#">some more more text</a></li>
+     
+     </ul>
+  _-----------------------------
+  
+  Navigation
+  <nav class="navbar navbar-default"
+  
+  <ul class="nav nav-tabs"/nav-pills nav-justify nav-stacked(stacks on top of eachother >
+      <li><a href="#">some text</a></li>
+      <li><a href="#">some more text</a></li>
+      <li><a href="#">some more more text</a></li>
+     
+     </ul>
+	 
+	 -----------
+	 collapse
+	 <button class="btn btn-primary" data-toggle="collapse/modal" data-target="#content"> content is the id used below
+	  <div class="collapse/modal fade" id="content" class=well>
+	  <

@@ -1,0 +1,65 @@
+*******SPRING FRAMEWORK****
+1. Dependancy Injection/Dependancy Inversion: way in which decouple relationship b/w objects(so that they wont tie with each)
+2.Spring behaves a factory of beans
+3. Spring is also container of beans. Spring only instacnes the objects and maintains life cycle of object destroys the objects
+     
+	 to preset a memebr variable when creating an object using property tag ----- setter injection
+															  
+				                                            constructor-arg  --- constructor- injection it need not have name just values r enuf
+4. bean autowiring -- instead of writing property tag autowire ="byName"  it see the memebr varibales name and id of bean 
+
+Bean Scopes
+1.default(Singleton)- only one instance per spring container . how many getbeans(id) are called same intance is being given (wont create new instance).When context is being initialised itself all beans will be created
+2. prototype : new bean is created for every req/ref/getBean(id).spring container will create new obj and gives to that class. bean created only when getBean
+
+Lifecycle
+InitializingBean DisposableBean  else in bean definition itself (init-method="myInitMethod") destroy-method="cleanUp"
+We can print bean with BeanNameAware interface(we will get one unimplement method setbeanName)
+
+
+BeanPostProcessor
+implement our class with BeanPostProcessor interface(Add unimplement methods) add the class beans in XML
+
+BeanFactoryPostProcess
+property file for initialising values
+<bean class="properyplaceholderConfigurer">
+ <property name = "location" value = "ourpropertyfilename.propeties">
+</bean>
+
+
+@Required SetPoint()  annotation need to set. to say we need to set the point to Spring.If it is not satisfied srping wil trhow exception
+At the same time need to add BeanPostProcessor in spring.xml
+
+******************
+@Autowired ( it is by type) First looks for type  if multipple srpings are of same type it will search for name of member varibale with bean id
+will inject dependancies into member variables of class
+@Qualifier() if it is having mutliple beans of same type it will find qulifier value in bean 
+
+*****JSR 250  Annotatins java specificaiton request different technologies and different frame work Spring supports few JSR annotatoon
+@Resource(name="beanid") even if v didnt mention name (by default it will take name of member variable)
+@PostConstruct bean si intialised   @PreDestroy  Bean is destroyed
+@Component -- defines class to be a bean( default name is name of class lowercase) In spring xml we need to include componsetscan tag
+               But we cant have differenct instances of same class  only one object can be created for its class
+			   But in spring XML v can define multiple instances with different beans with different meta data
+@Repository data
+@Controller       
+@Service Busines Service  
+@Component it is a generic says to spring it is bean 
+
+***********************************
+messaging and internationalisation event handling v can have advanges over beanfactory wehn compared with Applicationcontext
+if we want to get the messagesource interface from prop file
+*********
+event handling
+public class MyEventlistener implemts ApplicationListener add unmiplemented methods
+
+
+*******
+AOP aspect oriented programing features of Spring along with dependancy inject
+model of programing
+Logging transaction security
+we will remove the common fucntionalities in the classes  and then create a new Aspect(class with some previlages) 
+******
+we will define aspect configuration which tells whch objects which mehtods shud apply to 
+insrtead of creating separationg class and refering that object in the required class
+*****************

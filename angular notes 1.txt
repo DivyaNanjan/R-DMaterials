@@ -1,0 +1,97 @@
+angular js is java script framework
+library written in java script
+
+can use angular js by adding new attributes to HTML elements 
+
+perfect for single page apps(SPAs)
+popular bcoz of dependency injection,two way data binding(Controller and view changes made in one item will reflect in another)
+soon after user commits it will reflect 
+ng-model directive to take the input from user
+ng-bind directive to display what ever data given by user
+
+Benefits,
+two way data binding 
+dependancy injection(change in model change the view automatically)
+can develop in MVC way
+Can control the DOM elements with directives filters routes
+
+module is a container for differet parts of application like controllers directives 
+container is a js function.job is to build a model(data) for the view to display
+controller does this by attaching the model to the scope(its not the model. the data attached to it is the model) 
+
+var ctrl = function($scope)
+{
+  $scope.title = "Sandeep"
+ }
+ scope is the object/servuce passed by js automatically
+ which can be able to bind any prop in run time and can be used in the view later
+ __________________________________________________________________
+ 
+ Directives list
+ 1. ng-app : Starting angular js app
+ 2.ng-model ,ng-bind : bind the values from any HTML control , tags(span)
+ 3. ng-controller ; specify whcih controller to use
+ 4.ng-init : initialise
+ 5. ng-report: for loop
+ 6. ng-show :
+ 7. ng -disable:s
+ ___________________________________________________________________
+ 
+ Filters
+ 1.uppercase and lowercase
+ 2.currency :"Rs/-"
+ 3.orderby-for sorting thru particular column
+ 4.filter:
+ <input type=text ng-model="SearchText"/>
+ ng-repeat="students in List" | filter: SearchText | orderby: id
+ {{students.id|currency:"ID"}}
+ {{student.name|uppercase}}
+ 
+ ____________________________________________________________________
+ 
+ Forms
+ CSS classes
+ 1.ng-valid: value entered is valid 
+ 2. ng-pristine: value not cahnged even once
+ 3.ng-dirty: value changed atleast once
+ 4. 
+ 
+ ____________________________________________________________________
+ 
+ ng-include = "'page1.htm'" to include HTML inside a HTML
+ Note : page1.htm need not have html and body tag
+ 
+ ___________________________________________________________________
+ 
+ AJAX - Asynchronous java script and XML
+ 1. doing bigger as well it wont allow the page to reloaded
+ 2. independant of any technogoly(java php angualrjs)
+ 3. htttp service provided from ajax helps to load the data from the server
+ ___________________________________________________________________________
+ 
+ SPAs
+ 1. use the views to create spa'scope
+ 2. gives the experience to user as desktop app
+ 3.need to download angualr-route-min.js
+ __________________________________________________________________
+ Create Custom Service
+ 
+1.two methods a. factory  b. Service
+a. Factory
+app.factory("mathservice",function(){
+  
+   var factory = {}  object is created
+   factory.multiply = function(a,b)
+   {
+     return a*b
+	}
+ return factory (returning the object) can able to return single property
+})
+
+b. Service : No where object is created and returned.Object is created implicitly by using this
+   entire object need to be returned
+
+ __________________________________________________________________
+ 
+ Dependancy Injection
+ 1. 

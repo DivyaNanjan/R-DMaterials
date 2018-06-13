@@ -1,0 +1,246 @@
+Junit: for unit tests.
+
+Unit testing - breaking down system into components and then testing each one individually.
+
+Integrate eclipse and junit:
+
+Add junit library in java build path- add library- junit (is inbuilt) - select version.
+right click- open -java- junit-- junit Test case.
+
+org.junit.Assert:
+has all Assert. condition or just assert.conditions- it doesnt require any imports
+
+few imports are inbuild- we can select this by gng to content select in preferences in window.
+
+public class target{
+
+public basicadd(int a, int b)
+{
+int c= a+b;
+}
+
+public int basicdivide(int a ,int b)
+{
+int c= a/b;
+}
+}
+
+test class for this is: 
+
+public class testTarget
+
+{
+
+@test
+public void testadd()
+{
+
+target t= new targer();
+int answer = t.basicadd(2,3);
+Testcase.assertEquals("answer is ", 4,answer );- it will fail, since we expect 4 but answer is 5
+
+}
+
+@test(Expected-ArithmeticException.class)-pass
+public void testdivedbyzero()
+{
+
+t.basicdivide(10,0);- we expect arithmetic exception,so we get it- so pass
+
+}
+
+@test(Expected-ArithmeticException.class)-fail
+public void testdivedbyzero()
+{
+
+t.basicdivide(10,10);- we except exception thats why it is mention, but there is no exception, so fail
+
+
+}
+
+
+exception in junit test case- will fail.
+so inside the test case we shd throw the exception
+
+multiple running junit classes:
+
+main method()
+{
+Result result=JunitCore.runClasses(firstjunit.class,secondjunit.class);
+
+or 
+Computer c= new Compurer();
+Result result=JunitCore.runClasses(c,firstjunit.class,secondjunit.class);
+
+} first firstjunitclass runs complelty and then secondjunit.
+
+
+Computer c = new ParallelComputer(true,true);
+Result result=JunitCore.runClasses(c,firstjunit.class,secondjunit.class);
+
+--parallely it will computer both classes.
+
+asserts:
+
+assertTrue,assertFalse,fail(method)
+assertEquals(longvalue,longvalue);
+assertEquals("Tqwo are eual",a,a); - adding a note.
+For double- we need to add precision (same for float)
+
+assertEquals("Two double/float values",a,a,0.0001);- cannot compare two double values without precision number. If precision number is not added, then it will fail.
+
+objectEquality:
+
+assertEquals("Two same sitrings",s1,s2); - comparing two strings.
+same way s1,s2 can be two objects of class.
+
+int []  first ={1,2,3};
+int []  sameone=first;
+assertEquals("Two array pointers", first,sameone)- pass. since same pointers.
+int []  second={1,2,3};
+assertEquals("Two equal arrays",first,second); - fail, since it compares the pointers of arrays;
+assetArrayEquals("Two equal Arrays",first,second); - pass , since it compares contents of both arrays.
+
+There is no notequals for array,
+
+so if we want to test not equal arrays, then we can put expected exception
+
+@test(expected-Assertionerror.class)
+public arraynotequals()
+{
+
+try
+{
+assertArrayEquals("not equal",obj1,obj2);
+fail(The arrays are different);
+}
+catch(AssertionError e)
+}
+
+Assertthat:
+
+String tested="keep"
+string check="not keep"
+string check1="keep"
+assertThat("message",tested,check);  if test=check,pass, or else it will fail and display the message. This will fail
+
+now if we replace check as anything(check) - anything is a keyword,that gives true. So it will pass
+
+String tested2 = null;
+assertThat('msg",tested2,null(Value));- it will pass
+string tested1="";
+assertThat('msg",tested1,null(Value));- it will fail
+
+assertThat('msg",tested1,notnull(Value));- it will pass
+assertThat('are they equal",tested,equalto(check1));- it will pass- for comparing
+assertThat('are they equal",tested,is(check1));- it will pass-same as equalto
+assertThat('are they equal",tested,not(check));- it will pass- not is same like notequals
+
+sameInstance(object),theinstance(objkect),instanceof(.class),isA(.class) - to compare
+
+containsString(check);
+startswith(check);
+endswith(check);
+negation can be checked with not(endswith(check))
+
+complex matchers:
+
+allof(Startswith("("),containsString(),endswith());- shd pass all matchers
+anyof(conatins(),contains()...) - any one of it shd matche to pass.
+not(anyof(....))
+tested.matches(   ) - regular expression.
+either(endswith()).or(startswith).and(notnullvalue());
+
+collections and asserthat:
+
+String [] testarray={"a","b"};
+Collection<String> tested=Array.asList(testarray); - qwe can use set,list,hashset
+asserthat("msg",tested,hasItem("b"));
+asserthat("msg",tested,hasItems("b","a"));
+asserthat("msg",tested,hasItem(startswith("a"));
+asserthat("msg",tested,everyitem(not(endswith("fish")));
+
+customized matchers:-hamcrest framework
+
+public customematcher extends basematcher<sampleclass>
+{
+ we oeverride matches,describeto methods
+}
+
+
+Assume: - it checks whether test cases fail or not.
+whereass Assert- is to check whether function fails
+it is like precheck.
+assumetrue("msg",true);
+assumefalse("msg",false); msg when it fails
+assumenotnull('msg",x); - if assume is not coorectremaining statments in a test wont happen- it will skip the test
+assumeThat("must not be zero",tested,not(equalsto(0));
+
+
+setting up testcases:
+
+@before- runs before each of test case. 
+we can have any number of before statements
+@after- after all test case
+
+
+Testfixtures:
+to remove common errors or complextieis:
+
+if we have to call database for all test cases, we cant code it in all testcases
+
+so we use @beforeclass 
+public static void setuphibernate()
+{
+config= new ConfigurationFactory();
+}
+
+same way we have @afterclass()
+
+
+Test Suits: grouping of tests
+
+We have many test classes inside a program, we can run them individually but if there are many  running dem individually is difficult so we go for test suites.
+
+
+@runwith(suite.class)
+@Suitecklasses(firstjunit.class,secondjunit.class)- it can run in an any order.
+public class testsuiteexample{
+
+}
+
+Categories:grouping can be further custumozied.
+
+To ignore some tests because of failure or any reason
+
+use @ignore annotation after @test.
+All ignore test cases are passed but skipped.
+
+Testing time:
+
+public dosomethingslow
+{
+try{
+
+Thread.sleep(1000);
+}
+catch
+}
+
+@test(timeout=2000)
+public void testslow
+{
+target.dosomethingslow();- it will pass
+}
+
+@test(timeout=500)
+public void testdfast
+{
+target.dosomethingslow();- it will fail. since we want it
+to test in 500 milliseconds but it takes 1000 milliseconds.
+}
+
+Customizing test runs: we can customized runners like @test.
+
+
+

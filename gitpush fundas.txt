@@ -1,0 +1,18 @@
+git init
+
+git add *
+
+git status
+
+git commit -m "First Commit"
+
+git status
+
+
+git remote add origin https://github.com/reddyshanmukhasandeep/Newapp-helloworld.git
+
+
+git push -u origin master
+
+
+

@@ -1,0 +1,15 @@
+app-coomponet is the root component 
+so soon after the page loads
+--------------
+components
+1.reusable web-block by which entire angular app is made of
+2.it is having view+busines logic
+3.Create by simple type scipt class(file with .ts) and annotate with @Component  decorator
+4.Evry componet create in our app shud be declared in a app.module.ts
+----- simple way : ng generate component nameofcomponet    will do all 2,3,4 steps
+
+Databinding:
+1.interpolation: with {{propertyname}}  one way data binding
+2.propertybinding : [name]="value"
+above both will transfer data from componet to DOM
+3. event binding: from DOM to component... for onclick events
